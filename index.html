@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uyên Nhi</title>
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== 🎵 AUTOPLAY MUSIC (NEW) ===== -->
+    <!-- Replace music.mp3 with YOUR real file -->
+    <audio id="bgMusic" src="arjit.mp3" autoplay loop muted></audio>
+
+    <div id="drag-container">
+        <div id="spin-container">
+
+            <img src="sruti1.jpg" alt="">
+            <img src="sruti2.jpg" alt="">
+            <img src="sruti3.jpg" alt="">
+            <img src="sruti4.jpg" alt="">
+            <img src="sruti5.jpg" alt="">
+            <img src="sruti.jpg" alt="">
+			 <video src="arjit.mp4" autoplay muted loop playsinline></video>
+
+            <p>HAPPY <span> BIRTHDAY </span>SRUTI</p>
+            <button class="button" onclick="confetti()"></button>
+        </div>
+        <div id="ground"></div>
+    </div>
+
+    <div id="music-container"></div>
+    <div id="canva">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.browser.min.js'></script>
+    <script src="script.js"></script>
+
+    <!-- ===== 🎵 UNMUTE MUSIC ON FIRST CLICK (NEW) ===== -->
+  <script>
+document.addEventListener("click", function () {
+
+    // 1️⃣ Start music immediately on click
+    const audio = document.getElementById("bgMusic");
+    audio.muted = false;
+    audio.play().catch(() => {});
+
+    // 2️⃣ Start animation after 1 second delay
+    setTimeout(() => {
+        // Start spread animation
+        init();
+
+        // Start rotation
+        const spin = document.getElementById("spin-container");
+        spin.style.animationPlayState = "running";
+    }, 1000); // 1000ms = 1 second delay
+
+}, { once: true });
+</script>
+
+
+</body>
+
+</html>
